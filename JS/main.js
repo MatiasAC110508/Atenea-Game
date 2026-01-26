@@ -14,15 +14,14 @@ import {
 
 import { disableAnswers, iniciarBotones } from "./ui/buttons.js";
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Mostrar el nombre del usuario en pantalla 3
-    const nombre = sessionStorage.getItem("nombre"); // recupera el nombre
-    const aldeanoEl = document.getElementById("aldeano"); // h3 donde se mostrará
+// Mostrar el nombre del usuario en pantalla 3
+const nombre = sessionStorage.getItem("nombre"); // recupera el nombre
+const aldeanoEl = document.getElementById("aldeano"); // h3 donde se mostrará
 
-    if (nombre && aldeanoEl) {
-        aldeanoEl.textContent = nombre; // pone el nombre en el h3
-    }
-});
+if (nombre && aldeanoEl) {
+    aldeanoEl.textContent = nombre; // pone el nombre en el h3
+}
+
 
 /* ===============================
    VARIABLES GLOBALES
