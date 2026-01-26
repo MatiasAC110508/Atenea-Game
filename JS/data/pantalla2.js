@@ -57,7 +57,7 @@ function guardarYContinuar() {
   localStorage.setItem("nombre", nombre);
 
   // Redirect to pantalla3
-  window.location.href = "Atenea-Game/html/pantalla3/pantalla3.html";
+  window.location.href = "/Atenea-Game/html/pantalla3/pantalla3.html";
 }
 
 // Event listeners
