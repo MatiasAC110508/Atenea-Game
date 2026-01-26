@@ -16,7 +16,7 @@ import { disableAnswers, iniciarBotones } from "./ui/buttons.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     // Mostrar el nombre del usuario en pantalla 3
-    const nombre = localStorage.getItem("nombre"); // recupera el nombre
+    const nombre = sessionStorage.getItem("nombre"); // recupera el nombre
     const aldeanoEl = document.getElementById("aldeano"); // h3 donde se mostrará
 
     if (nombre && aldeanoEl) {
