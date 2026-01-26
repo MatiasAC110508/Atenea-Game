@@ -14,13 +14,14 @@ import {
 
 import { disableAnswers, iniciarBotones } from "./ui/buttons.js";
 
-// Mostrar el nombre del usuario en pantalla 3
-const nombre = sessionStorage.getItem("nombre"); // recupera el nombre
-const aldeanoEl = document.getElementById("aldeano"); // h3 donde se mostrará
+document.addEventListener("DOMContentLoaded", () => {
+    const nombre = sessionStorage.getItem("nombre");
+    const aldeanoEl = document.getElementById("aldeano");
 
-if (nombre && aldeanoEl) {
-    aldeanoEl.textContent = nombre; // pone el nombre en el h3
-}
+    if (nombre && aldeanoEl) {
+        aldeanoEl.textContent = nombre;
+    }
+});
 
 
 /* ===============================
