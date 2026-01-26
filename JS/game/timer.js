@@ -21,7 +21,7 @@ function startTimer(onTimeout) {
 
         if (timeLeft <= 0) {
             stopTimer();
-            onTimeout(); //  El juego decide qué pasa
+            onTimeout(); // 🔥 el juego decide qué pasa
         }
     }, 1000);
 }
