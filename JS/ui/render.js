@@ -28,7 +28,10 @@ export function renderEndScreen(title, message, type) {
     sessionStorage.setItem("endTitle", title);
     sessionStorage.setItem("endMessage", message);
 
-    // Detectar si estamos en pantalla3 (dentro de html/pantalla3/) o en pantalla_3.html (raíz)
-    const currentPath = window.location.pathname;
-    window.location.href = "../pantalla_final.html";
+    // Detectar si estamos en pantalla3
+    
+    const path = window.location.pathname;
+    if (path.includes("/html/pantalla3/")) {
+        window.location.href = "../../pantalla_final.html";
+    } 
 }
