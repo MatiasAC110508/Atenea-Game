@@ -32,6 +32,6 @@ export function renderEndScreen(title, message, type) {
     
     const path = window.location.pathname;
     if (path.includes("/html/pantalla3/")) {
-        window.location.href = "../../pantalla_final.html";
+        window.location.href = "../pantalla_final.html";
     } 
 }
