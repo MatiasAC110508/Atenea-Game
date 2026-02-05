@@ -27,11 +27,7 @@ export function renderEndScreen(title, message, type) {
     sessionStorage.setItem("endType", type); // "win" o "lose"
     sessionStorage.setItem("endTitle", title);
     sessionStorage.setItem("endMessage", message);
-
-    // Detectar si estamos en pantalla3
     
-    const path = window.location.pathname;
-    if (path.includes("/html/pantalla3/")) {
-        window.location.href = "../pantalla_final.html";
-    } 
+    window.location.href = "../pantalla_final.html";
+
 }
