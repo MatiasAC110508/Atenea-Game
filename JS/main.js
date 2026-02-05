@@ -183,6 +183,10 @@ function iniciarIndex() {
             const pantalla = document.getElementById("pantalla-inicial");
             const pergamino = document.getElementById("pergamino");
             const texto = document.getElementById("texto-pergamino");
+            const upperPart = document.getElementById("upper-part")
+            
+            setTimeout(() => upperPart.remove(), 500)
+            
 
             if (!pantalla || !pergamino || !texto) return;
 
@@ -196,14 +200,14 @@ function iniciarIndex() {
                     escribirTexto(
                         `En la antigua Acrópolis, una disputa entre Atenea y Poseidón terminó en desastre.
 
-Poseidón inundó la ciudad para demostrar su poder.
+                        Poseidón inundó la ciudad para demostrar su poder.
 
-Zeus impuso una condición: solo quien demuestre verdadera sabiduría podrá reconstruir la ciudad.`,
+                        Zeus impuso una condición: solo quien demuestre verdadera sabiduría podrá reconstruir la ciudad.`,
                         texto
                     );
 
                     texto.classList.add("mostrar");
-                }, 1800);
+                }, 1200);
 
             }, 800);
         });
