@@ -1,289 +1,238 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=EB+Garamond:wght@400;600&display=swap');
 
-/* Variables globales - Unificadas desde pantalla_final */
+/* ===============================
+   VARIABLES GLOBALES
+=============================== */
 :root {
-  --font-principal: "Almendra", serif;
   --color-texto: #fff;
   --color-titulo: rgb(223, 204, 36);
-  --color-parrafo: black;
-  --sombra-texto: 2px 2px 8px #000;
-  --titulo-size: 3rem;
-  --parrafo-size: 48px;
+  --color-parrafo: #3b2a1a;
   --color-borde-dorado: #c8a75e;
   --color-borde-boton: #bfa76a;
+
   --gradiente-boton: linear-gradient(to bottom, #f4efe4, #d6c8a2);
   --gradiente-boton-hover: linear-gradient(to bottom, #f1d777, #caa23c);
 }
 
-/* Reset unificado desde pantalla_final */
+/* ===============================
+   RESET
+=============================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Estilos */
-html {
-  font-family: "Almendra", serif;
-  
+/* ===============================
+   BASE
+=============================== */
+html, body {
+  width: 100%;
+  height: 100%;
 }
-
 
 body {
-    font-family: 'EB Garamond', serif;
-    background-image: url(../assets/background/Fondo_Pantalla3.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+  font-family: 'EB Garamond', serif;
+  background-image: url("../assets/background/Fondo_Pantalla3.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    min-height: 100vh;
-
-    backdrop-filter: blur(2px);
+  min-height: 100vh;
+  backdrop-filter: blur(2px);
 }
 
-/* BLOQUE SUPERIOR */
+/* ===============================
+   BLOQUE SUPERIOR
+=============================== */
 #upper-part {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 
-    background: linear-gradient(to right, #e8e2d0, #d6c8a2);
-    color: #2b2b2b;
+  background: linear-gradient(to right, #e8e2d0, #d6c8a2);
+  color: #2b2b2b;
 
-    border: 3px solid #bfa76a;
-    border-radius: 14px;
-    padding: 16px 22px;
+  border: 3px solid var(--color-borde-boton);
+  border-radius: 14px;
+  padding: 1.5rem;
 
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
-    margin-bottom: 24px;
-    gap: 1rem;
+  box-shadow: 0 0 25px rgba(0,0,0,0.6);
 }
 
 .container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+#upper-part.pantalla-desvanecer {
+  opacity: 0;
+  pointer-events: none;
 }
 
 
-
+/* ===============================
+   TEXTO PRINCIPAL
+=============================== */
 .title {
-  font-size: 5rem;
-  color: #efb810;
+  font-size: clamp(2rem, 5vw, 5rem);
+  color: var(--color-titulo);
+  text-shadow: 2px 2px 4px #000;
   text-align: center;
-  margin-top: 2rem;
-  text-shadow: 2px 2px 4px #000000;
 }
 
 .descripcion {
-  font-size: 3rem;
+  font-size: clamp(1.2rem, 3vw, 3rem);
   color: rgb(104, 69, 6);
+  text-shadow: 1px 1px 2px #000;
   text-align: center;
-  margin: 2rem;
-  margin-top: 2rem;
-  text-shadow: 1px 1px 2px #000000;
 }
 
-.btn-gold {
-    background: var(--gradiente-boton);
-    border: 3px solid var(--color-borde-boton);
-    border-radius: 14px;
+/* ===============================
+   BOTONES
+=============================== */
+.btn-gold,
+.btn-simple {
+  background: var(--gradiente-boton);
+  border: 3px solid var(--color-borde-boton);
+  border-radius: 14px;
+  padding: 1rem 1.5rem;
 
-    padding: 16px;
-    font-family: 'Cinzel', serif;
-    font-size: 1.1rem;
-    font-weight: 600;
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
 
-    cursor: pointer;
-    transition: all 0.2s ease;
-
-    text-align: center;
-    box-shadow: 0 0 15px rgba(0,0,0,.3);
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0,0,0,.3);
+  transition: all 0.25s ease;
 }
 
-.btn-gold:active {
+.btn-gold:hover,
+.btn-simple:hover {
+  background: var(--gradiente-boton-hover);
+  transform: scale(1.05);
+}
+
+.btn-gold:active,
+.btn-simple:active {
   transform: scale(0.95);
 }
 
-.btn-gold:hover {
-  background: var(--gradiente-boton-hover);
-  transform: scale(1.05);
-  box-shadow: 2px 2px 8px #000000, 0 0 20px rgba(241, 215, 119, 0.4);
-}
-
-.btn-simple {
-    background: var(--gradiente-boton);
-    border: 3px solid var(--color-borde-boton);
-    border-radius: 14px;
-
-    padding: 16px;
-    font-family: 'Cinzel', serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-
-    cursor: pointer;
-    transition: all 0.2s ease;
-
-    text-align: center;
-    box-shadow: 0 0 15px rgba(0,0,0,.3);
-
-    margin-top: 1rem;
-}
-
-.btn-simple:hover {
-  background-color: #ffffff;
-  color: #000000;
-  transform: scale(1.05);
-}
-
-.pergamino {
-  width: 60%;
-  max-width: 600px;
-  background: #f3e0b5;
-  border: 6px solid #a67c52;
-  border-radius: 15px;
-  margin: 3rem auto;
-  padding: 2rem;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
-
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 1.5s ease, padding 1s ease;
-  position: relative;
-  z-index: 10;
-
-}
-
+/* ===============================
+   PERGAMINO EVENTO
+=============================== */
 .pergamino-oculto {
-  pointer-events: none;
-  position: absolute;
-  right: 4%;
-  top: 50%;
-  transform: translateY(-50%) translateX(80px);
-
-  width: 800px;
-  height: 900px;
-  min-height: 300px;
-  padding: 30px;
-
-  background-image: url("../assets/background/pergamino-removebg-preview.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   opacity: 0;
-  visibility: hidden;     
-  pointer-events: none;   
+  visibility: hidden;
+  pointer-events: none;
 
-  z-index: 5;
+  z-index: 50;
+
+  width: 90vw;
+  height: 70vh;
+}
+
+.pergamino-oculto.mostrar {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .pergamino-contenido {
-  position: absolute;
-  top: 20%;
-  left: 24%;
-  width: 50%;
-  height: 55%;
-  /* display: flex; */
+  max-width: 20rem;
+  width: 100%;
+  height: auto;
+  gap: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
+
   text-align: center;
+
 }
-
-
-.pergamino-oculto.mostrar {
-  pointer-events: auto;
-  visibility: visible; 
-  opacity: 1;
-  animation: aparecerPergamino 1.8s ease forwards;
-}
-
 
 #texto-pergamino {
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: #3b2a1a;
+
+  max-width: 12rem;
+  min-width: 100%;
+  height: auto;
   opacity: 0;
-  font-family: 'Almendra', serif;
-  font-size: 2rem;
-  line-height: 1.5;
-  text-align: center;
-  padding: 3rem;
+
+
+  background: linear-gradient(to right, #e8e2d0, #d6c8a2);
+  color: #2b2b2b;
+
+  border: 3px solid var(--color-borde-boton);
+  border-radius: 14px;
+  padding: 1.5rem;
+
+  box-shadow: 0 0 25px rgba(0,0,0,0.6);
 }
 
 #texto-pergamino.mostrar {
   opacity: 1;
-  animation: aparecerTexto 2s ease forwards;
-  transition: opacity 2s ease;
-}
-
-.btn-play-img {
-  pointer-events: auto;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  margin-top: -2rem;
-  display: flex;
-  justify-content: center;
-
 }
 
 .btn-play-img img {
-  width: 120px;
-  height: auto;
-  transition: transform 0.3s;
-  display: block;
-  margin-left: 350px;
+  width: 90px;
+}
+
+
+/* ===============================
+   BOTÓN CONTINUAR
+=============================== */
+.btn-play-img {
+  background: transparent;
+  border: none;
   cursor: pointer;
 
-}
-.btn-play-img:hover {
-  transform: translateY(-5px);
-  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.btn-play-img:active {
+.btn-play-img img {
+  width: 90px;
+  height: auto;
+}
+
+.btn-play-img:hover img {
+  transform: translateY(-6px);
+}
+
+.btn-play-img:active img {
   transform: scale(0.95);
 }
 
-.btn-gold,
-.btn-simple {
-  position: relative;
-  z-index: 20;
-}
-
-.pergamino.abierto {
-  max-height: 400px;
-}
-
-#texto-pergamino {
-  font-size: 1.8rem;
-  color: #3b2a1a;
-  opacity: 0;
-  transition: opacity 1s ease;
-}
-
-.oculto {
-  display: none !important;
-}
-
-.pantalla-desvanecer {
-  animation: fadeOut 0.8s  forwards;
-}
-
+/* ===============================
+   PERGAMINO INSTRUCCIONES
+=============================== */
 .pergamino-instrucciones {
-  position: absolute;
+  position: fixed;
   inset: 0;
   z-index: 30;
 
- 
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0,0,0,0.65);
   backdrop-filter: blur(3px);
 
   display: flex;
@@ -292,30 +241,25 @@ body {
 }
 
 .pergamino-instrucciones .pergamino-contenido {
-  background-image: url("../assets/background/pergamino-removebg-preview.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  width: min(90vw, 700px);
+  height: min(90vh, 850px);
 
-  width: 790px;
-  height: 700px;
-  min-height: 300px;
-  padding: 30px;
-  margin-top: -10rem;
+  padding: 3rem;
+  gap: 1rem;
 
-  right: 4%;
+  color: white;
 
-  padding: 4rem 5rem;
-  text-align: center;
-  color: #3b2a1a;
+  background: linear-gradient(to right, #e8e2d0, #d6c8a2);
+  color: #2b2b2b;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  border: 3px solid var(--color-borde-boton);
+  border-radius: 14px;
+
+  box-shadow: 0 0 25px rgba(0,0,0,0.6);
 }
 
 .pergamino-instrucciones h2 {
-  margin-bottom: 3rem;
+  font-size: 2rem;
 }
 
 .pergamino-instrucciones p {
@@ -323,43 +267,60 @@ body {
   line-height: 1.4;
 }
 
-.pergamino-instrucciones .frase {
+.frase {
   font-style: italic;
-  margin-top: 1rem;
 }
 
+/* ===============================
+   BOTÓN CERRAR
+=============================== */
+
 .btn-trivia-atenea {
-  margin-top: 2rem;
-  padding: 1rem 2rem;
-  font-size: 1.5rem;
-  background-color: #f0b90b;
-  color: #ffffff;
-  border: none;
-  border-radius: 8px;
+  background: var(--gradiente-boton);
+  border: 3px solid var(--color-borde-boton);
+  border-radius: 14px;
+  padding: 1rem 1.5rem;
+
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+
   cursor: pointer;
-  box-shadow: 2px 2px 6px #000000;
-  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 0 15px rgba(0,0,0,.3);
+  transition: all 0.25s ease;
 }
 
 .btn-trivia-atenea:hover {
-  background-color: #d4a107;
+  background: var(--gradiente-boton-hover);
   transform: scale(1.05);
 }
 
-@keyframes aparecerTexto {
-  to {
-    opacity: 1;
-  }
+.btn-trivia-atenea:active {
+  transform: scale(0.95);
 }
 
+/* ===============================
+   UTILIDADES
+=============================== */
+.oculto {
+  display: none !important;
+}
+
+.pantalla-desvanecer {
+  animation: fadeOut 0.8s forwards;
+}
+
+/* ===============================
+   ANIMACIONES
+=============================== */
 @keyframes aparecerPergamino {
   from {
-    opacity: 1;
-    transform: translateY(-50%) translateX(80px);
+    opacity: 0;
+    transform: scale(0.9);
   }
-
   to {
-    transform: translateY(-50%) translateX(0);
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -368,20 +329,21 @@ body {
     opacity: 0;
     transform: scale(0.95);
   }
-
 }
 
+/* ===============================
+   MOBILE
+=============================== */
 @media (max-width: 768px) {
-  .title {
-    font-size: 2.5rem;
-    margin-top: 2rem;
+  .pergamino-oculto {
+    width: 90vw;
+    height: 70vh;
   }
 
-  .descripcion {
-    font-size: 1.5rem;
+  .pergamino-contenido {
+    padding-top: 32%;
+    padding-bottom: 34%;
+    padding-left: 12%;
+    padding-right: 12%;
   }
-
-  .btn-gold {
-    font-size: 1.5rem;
-    margin-top: 3rem;
 }
